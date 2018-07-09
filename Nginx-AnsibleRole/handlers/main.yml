@@ -1,4 +1,5 @@
 ---
+# Two handlers to reload or run the nginx service
 - name: "Start nginx"
   become: yes
   service: name=nginx state=started
