@@ -1,4 +1,4 @@
-# Terraform-ansible
+## Terraform-ansible
 A simple terraform script to provision an instance on AWS and then run a simple  ansible runbook   installing ngnix 
 
 
@@ -12,11 +12,10 @@ Afterwards you will have to options:
 1-	use your AWS account Access and Private keys directly, or create an AWS CLI profile and pass the profile name to Terraform "This can be edited in (terraform.tfvars)
 
 
-#AWS PROFILE IMG HERE
 
+#To create an AWS CLI profile: 
+aws configure --profile PROFILENAME
 
-To create an AWS CLI profile: 
-- aws configure --profile PROFILENAME
 ![aws_cli_conf](https://user-images.githubusercontent.com/7353494/42449091-a42aae36-837f-11e8-931c-3f26ced54a3c.png)
 You should fill the entries with your AWS configurations.
 
