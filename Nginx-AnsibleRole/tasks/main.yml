@@ -1,33 +1,19 @@
 ---
+#adding nginx repo
 - name: "Add nginx repo"
   become: yes
   apt_repository: 
-     repo: ppa:nginx/stable # required. A source string for the repository.
-     update_cache: yes # not required. Run the equivalent of C(apt-get update) when a change occurs.  Cache updates are run after making changes.
-     state: present # not required. choices: absent;present. A source string state.
+     repo: ppa:nginx/stable #repo name 
+     update_cache: yes      # this equivalent to (apt-get update) when a change occurs.  Cache updates are run after making changes.
+     state: present         # state of pkg
   register: ppastable
 
+# installing ngnix
 - name: "Install Nginx"
   become: yes
-  apt:
-      name: nginx # not required. A list of package names, like C(foo), or package specifier with version, like C(foo=1.0). Name wildcards (fnmatch) like C(apt*) and version wildcards like C(foo=1.0*) are also supported.
-      update_cache: yes # not required. Run the equivalent of C(apt-get update) before the operation. Can be run as part of the package installation or as a separate step.
-  when: ppastable|success
+  apt:                      #installing apt package
+      name: nginx           #package Name
+  when: ppastable|success   #this will run when repo is added successfully 
   register: nginxinstalled
-  notify:
+  notify:                   #trigger the start nginx handler
     - Start nginx
-
-#- name: "copy files to server"
-#  when: nginxinstalled|success
-#  copy:
-      #dest: /etc/ngnix
-      #src: somefile
-      #owner: null 
-      #group: null
-
-- name: "disable deafult site"
-  become: yes
-  file:
-      path: /etc/nginx/sites-enabled/default
-      state: absent 
-      
