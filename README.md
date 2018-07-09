@@ -39,7 +39,9 @@ The ansible role will make sure that python is installed, install nginx and star
 3-	Terraform apply
 
 #Terraform is creating instance
+
 ![running terraform apply 1](https://user-images.githubusercontent.com/7353494/42449092-a44bf442-837f-11e8-8ad6-f1c419fa05a8.png)
+
 You should see find the aws instance in being creating on your cloud.
 
 #Terraform is running ansible runbook
