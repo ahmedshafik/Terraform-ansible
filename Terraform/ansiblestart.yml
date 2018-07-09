@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: False
+  tasks:
+    - name: ensure python 2.7 is installed
+      raw: apt-get install -y python2.7 python-simplejson
+
+- name: "installing roles" 
+  hosts: all      
+  roles:
+    - nginx-ansible
