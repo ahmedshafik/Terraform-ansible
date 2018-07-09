@@ -35,7 +35,7 @@ The access and private keys can be passed to terrafrom in two ways
 
 ![running terraform apply 1](https://user-images.githubusercontent.com/7353494/42449092-a44bf442-837f-11e8-8ad6-f1c419fa05a8.png)
 
-You should see find the aws instance in being creating on your cloud.
+by this momen you can find a newly created instance on aws
 
 #Terraform is running ansible runbook
 ![terraform running ansible](https://user-images.githubusercontent.com/7353494/42449094-a4acb336-837f-11e8-939f-fb43c1c73495.png)
