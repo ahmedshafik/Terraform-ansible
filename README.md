@@ -24,10 +24,10 @@ The access and private keys can be passed to terrafrom in two ways
 - move the "Nginx-AnsibleRole" directory to "/etc/ansible/roles"
 - download the aws instance key pairs and 
 - update terraform.tfvars with the appropriate values
-- commands to run the project
--- terraform init
--- terraform plan
--- terraform apply
+* commands to run the project
+    * terraform init
+    * terraform plan
+    * terraform apply
 
 
 ## screenshots while terraform and ansible are running
