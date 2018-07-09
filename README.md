@@ -1,46 +1,37 @@
-## Terraform-ansible
-A simple terraform script to provision an instance on AWS and then run a simple  ansible runbook   installing ngnix 
+# Terraform-Ansible
+
+A simple terraform script to provision an instance on AWS and then run a simple ansible runbook installing ngnix
 
 
-First of all please make sure that your server has the below packages installed:
-1- AWS CLI
-2- Python
-3- Terraform
-4- Ansible
+# Pre-installed package: 
 
-Afterwards you will have to options:
-1-	use your AWS account Access and Private keys directly, or create an AWS CLI profile and pass the profile name to Terraform "This can be edited in (terraform.tfvars)
+ - AWS CLI
+ - Python
+ - Terraform
+ - Ansible
 
 
+## passing the keys to terraform:
 
-# To create an AWS CLI profile: 
-aws configure --profile PROFILENAME
+The access and private keys can be passed to terrafrom in two ways
 
-![aws_cli_conf](https://user-images.githubusercontent.com/7353494/42449091-a42aae36-837f-11e8-931c-3f26ced54a3c.png)
+ - use aws cli profile "already configured with keys" and pass the profile name to terraform, so terraform will access the aws as with the profile
+ - pass the keys directly to terraform, this can be edited under (terraform.tfvars)
 
-Please fill the entries with your AWS configurations.
+## To run the script
 
-Under terraform.tfvars :
-Please fill the below Variables. 
-aws_profile = “PROFILENAME”
-aws_region = “REGIONHERE” 
-Private_Key_Path = "PrivateKey here.pem"         
-Ansible_RunBook = "ansiblestart.yml
-The ansible role will make sure that python is installed, install nginx and start the service
+- clone the project to your server
+- move the "Nginx-AnsibleRole" directory to "/etc/ansible/roles"
+- download the aws instance key pairs and 
+- update terraform.tfvars with the appropriate values
+- commands to run the project
+-- terraform init
+-- terraform plan
+-- terraform apply
 
-You can go ahead an pass the keys to terraform in  terraform.tfvars "in case you don't like to use aws profile_
-Please make sure to comment the aws_profile = “PROFILENAME”, and edit the variables.tf
 
-# To run the project:
-1-	Copy the Nginx-AnsibleRole directory to /etc/ansible/roles
-2-	Update terraform.tfvars  AWS_instance_KEY = "Your AWS Instance key" with the name of they key that the instance will use
-3-	Copy AWS instance private key to the terraform path and update the terraform.tfvars  Private_Key_Path = "PrivateKey"    
-4-	Run the below commands:
-1-	Terraform init
-2-	Terraform plan
-3-	Terraform apply
+## screenshots while terraform and ansible are running
 
-# Terraform is creating instance
 
 ![running terraform apply 1](https://user-images.githubusercontent.com/7353494/42449092-a44bf442-837f-11e8-8ad6-f1c419fa05a8.png)
 
