@@ -33,7 +33,6 @@ Please make sure to comment the aws_profile = “PROFILENAME”, and edit the va
 
 # To run the project:
 1-	Copy the Nginx-AnsibleRole directory to /etc/ansible/roles
-![ansible roles](https://user-images.githubusercontent.com/7353494/42449090-a40d3798-837f-11e8-9a92-180e3e339b66.png)
 2-	Update terraform.tfvars  AWS_instance_KEY = "Your AWS Instance key" with the name of they key that the instance will use
 3-	Copy AWS instance private key to the terraform path and update the terraform.tfvars  Private_Key_Path = "PrivateKey"    
 4-	Run the below commands:
