@@ -28,7 +28,7 @@ Private_Key_Path = "PrivateKey here.pem"
 Ansible_RunBook = "ansiblestart.yml
 The ansible role will make sure that python is installed, install nginx and start the service
 
-# You can go ahead an pass the keys to terraform in  terraform.tfvars "in case you don't like to use aws profile_
+You can go ahead an pass the keys to terraform in  terraform.tfvars "in case you don't like to use aws profile_
 Please make sure to comment the aws_profile = “PROFILENAME”, and edit the variables.tf
 
 # To run the project:
